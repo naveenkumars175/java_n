@@ -13,9 +13,11 @@ pipeline {
         }
         stage('Deploy to Tomcat') {
             steps {
-                // Add your Tomcat deployment commands here
+                echo "Deploying application to Tomcat..."
+                // Add your actual Tomcat deployment commands here
             }
         }
     }
 }
+
 

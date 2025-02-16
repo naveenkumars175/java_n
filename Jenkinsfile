@@ -1,10 +1,9 @@
 pipeline {
     agent any
-
     stages {
         stage('Clone Repository') {
             steps {
-                git 'git@github.com:naveenkumars175/java_n.git'
+                git branch: 'main', url: 'https://github.com/naveenkumars175/java_n'
             }
         }
         stage('Build with Maven') {
@@ -14,8 +13,9 @@ pipeline {
         }
         stage('Deploy to Tomcat') {
             steps {
-                sh 'cp target/java_n.war /var/lib/tomcat9/webapps/'
+                // Add your Tomcat deployment commands here
             }
         }
     }
 }
+
